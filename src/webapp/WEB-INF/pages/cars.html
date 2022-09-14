@@ -7,6 +7,26 @@
     <title>Cars</title>
 </head>
 <body>
-
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Компания</th>
+                    <th>Модель</th>
+                    <th>Цена, &#x20bd;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${cars.isEmpty()}">
+                    <td colspan="3">No cars available</td>
+                </tr>
+                <tr th:each="car : ${cars}">
+                    <td th:text="${car.getCompany()}"></td>
+                    <td th:text="${car.getModel()}"></td>
+                    <td th:text="${car.getPrice()}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
