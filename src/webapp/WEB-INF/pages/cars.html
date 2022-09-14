@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
-      lang="en">
+      lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
+    <style>
+        th {
+            background: lightsalmon;
+        }
+        table {
+            border-collapse: collapse;
+            background: mistyrose;
+        }
+        th, td {
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -18,7 +30,7 @@
             </thead>
             <tbody>
                 <tr th:if="${cars.isEmpty()}">
-                    <td colspan="3">No cars available</td>
+                    <td colspan="3" align="center">No cars available</td>
                 </tr>
                 <tr th:each="car : ${cars}">
                     <td th:text="${car.getCompany()}"></td>
